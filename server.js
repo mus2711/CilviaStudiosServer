@@ -6,7 +6,7 @@ import commentclient from "./commentclient.js";
 var buggyArrays = commentclient.init("./db/buggy.sqlite");
 var stoolArrays = commentclient.init("./db/stool.sqlite");
 var sleepArrays = commentclient.init("./db/sleep.sqlite");
-var c19Arrays = commentclient.init("./db/c19.sqlite");
+var c19Arrays = commentclient.init("./db/c19comments.sqlite");
 var emailArray = emailclient.init();
 const port = process.env.PORT || 8080;
 const app = express();
@@ -82,16 +82,16 @@ app.post("/sleep", (request, response) => {
 
 app.get("/c19", (request, response) => {
     response.json({comments: c19Arrays});
-    c19Arrays = commentclient.init("./db/c19.sqlite");
+    c19Arrays = commentclient.init("./db/c19comments.sqlite");
 });
 
 app.post("/c19", (request, response) => {
     console.log("I got a comment");
     // console.log(request.body);
-    insertcomments.init("./db/c19.sqlite",request.body.userName, request.body.userFeedback);
+    insertcomments.init("./db/c19comments.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    c19Arrays = commentclient.init("./db/c19.sqlite");
+    c19Arrays = commentclient.init("./db/c19comments.sqlite");
 });
