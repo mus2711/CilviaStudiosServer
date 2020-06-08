@@ -1,8 +1,7 @@
 import sqlite3 from "sqlite3";
 const commentclient = Object.create(null);
+
 commentclient.init = function(database) {
-
-
     let db = new sqlite3.Database(database, sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
           return console.error(err.message);
@@ -29,7 +28,5 @@ commentclient.init = function(database) {
       });
     return [namearray, commentarray];
 };
-
-
 
 export default Object.freeze(commentclient);
