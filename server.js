@@ -1,5 +1,4 @@
 import express from "express";
-// const express = require("express");
 import emaildata from "./emaildb.js";
 import emailclient from "./emailsclient.js";
 import insertcomments from "./commentdb.js";
@@ -40,7 +39,7 @@ app.get("/buggy", (request, response) => {
 
 app.post("/buggy", (request, response) => {
     console.log("I got a comment");
-    // console.log(request.body);
+    console.log(request.body);
     insertcomments.init("./db/buggy.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
