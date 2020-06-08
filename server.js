@@ -10,7 +10,6 @@ var c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 var emailArray = emailclient.init();
 const port = process.env.PORT || 8080;
 const app = express();
-require("dotenv")
 
 app.use("/", express.static("cilviastudios"));
 app.listen(port, function () {
