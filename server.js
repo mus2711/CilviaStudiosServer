@@ -18,7 +18,7 @@ app.listen(port, function () {
 app.use(express.json({limit: "20mb"}));
 
 app.get("/api", (request, response) => {
-    response.json({emails: emailArray});
+    response.json({emails: emailArray.reverse()});
     emailArray = emailclient.init();
 });
 
@@ -33,7 +33,7 @@ app.post("/api", (request, response) => {
 });
 
 app.get("/buggy", (request, response) => {
-    response.json({comments: buggyArrays});
+    response.json({comments: buggyArrays.reverse()});
     buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
 });
 
@@ -49,7 +49,7 @@ app.post("/buggy", (request, response) => {
 });
 
 app.get("/stool", (request, response) => {
-    response.json({comments: stoolArrays});
+    response.json({comments: stoolArrays.reverse()});
     stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
 });
 
@@ -65,7 +65,7 @@ app.post("/stool", (request, response) => {
 });
 
 app.get("/sleep", (request, response) => {
-    response.json({comments: sleepArrays});
+    response.json({comments: sleepArrays.reverse()});
     sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
 });
 
@@ -81,7 +81,7 @@ app.post("/sleep", (request, response) => {
 });
 
 app.get("/c19", (request, response) => {
-    response.json({comments: c19Arrays});
+    response.json({comments: c19Arrays.reverse()});
     c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 });
 
