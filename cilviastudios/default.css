@@ -589,7 +589,7 @@ button {
     position: absolute;
     top: 0;
     margin-top: 2.5vw;
-    right: 0px;
+    right: 0vw;
     margin-right: 2.7vw;
     width: 2vw;
     height: 2vw;
@@ -607,11 +607,11 @@ button {
 
 
 #WorkingOn:focus {
-    color: yellow;
+    color:  #ffd451;
 }
 
 #numberlink:focus {
-    color: yellowgreen;
+    color: #ffd451;
 }
 
 .contact-details li:focus {
@@ -640,22 +640,6 @@ button {
     will-change: opacity, scale;
     perspective: 50em;
     scale: 1;
-    /*
-    position: absolute;
-    left:0;
-    top: 0;
-    margin-left: 40vw;
-    margin-top: 18vw; */
-    /* transform: rotate3d(0,1,0, 0deg);
-    position: absolute; */
-    /* top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    display: flex;
-    align-items: center;
-    justify-content: center 
-    opacity: 1;
-    scale: 1; */
 }
 
 #buttonbehance {
@@ -735,7 +719,7 @@ button {
 
                 @media only screen and (max-width: 900px) {
                     .collation-of {
-                        font-size: 1.3vw;
+                        font-size: 1.6vw;
                     }
 
                     .project-titles {
@@ -752,6 +736,15 @@ button {
                      #heading-line {
                         display: none;
                     } 
+
+                    @media only screen and (max-width: 700px) {
+                        @media (orientation:portrait) {
+                            .circle-area, .closebtn {
+                                display: none
+                            }
+                        }
+                    }
+                
                     /* #top-message {
                         font-size: 34pt;
                     }
