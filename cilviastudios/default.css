@@ -338,7 +338,7 @@ button {
     position: absolute;
     right:0;
     margin-right: 2.6vw;
-    top: 131vw;
+    top: 132.2vw;
     background-color:#ffd451;
     width: 8.5vw;
     height: 3.2vw;
@@ -359,7 +359,7 @@ button {
 #email-here {
     position: absolute;
     /* z-index: 1; */
-    margin-top: 131vw;
+    margin-top: 132.2vw;
     width: 33vw;
     left: 50%;
     top: 0;
@@ -666,56 +666,18 @@ button {
 }
 
 @media only screen and (max-width:1360px) {
-    /* .got-any p {
-        display: none;
-    } */
     #buttonbehance {
         font-size: 1vw;
     }
-
     @media only screen and (max-width:1250px) {
-        /* .collation-of {
-            font-size: 18pt;
-        }
-        .mag-cop {
-            font-size: 58px;
-        } */
+
         @media only screen and (max-width: 1200px) {
-            /* .project-titles {
-                font-size: 40px;
-            }
-            .mag-cop {
-                font-size: 50px;
-            }
-            .collation-of {
-                font-size: 16pt;
-            } */
+
             @media only screen and (max-width: 1100px) {
-                /* .detail-heading { 
-                    font-size: 35px;  
-                }
-                .footer-mail-link, .footer-call-link {
-                    font-size: 15px; 
-                }
-                
-                .collation-of {
-                    font-size: 14pt;
-                } */
-    
+
                 #CilviaThree {
                     display: none;
                 }
-            
-                /* #top-message {
-                    font-size: 36pt;
-                }
-                .lets-grab-coffee {
-                    font-size: 17px;
-                }
-                
-                .project-titles {
-                    font-size: 36px
-                } */
 
                 @media only screen and (max-width: 900px) {
                     .collation-of {
@@ -742,19 +704,11 @@ button {
                             .circle-area, .closebtn {
                                 display: none
                             }
+                            #subscribe-button, #email-here {
+                                margin-top: 140 vw;    
+                            }
                         }
                     }
-                
-                    /* #top-message {
-                        font-size: 34pt;
-                    }
-                    .statement-message {
-                        width: 80%;
-                    }
-                    .lets-grab-coffee {
-                        font-size: 17px;
-                        width: 80%
-                    } */
                 };  
             };
         };
