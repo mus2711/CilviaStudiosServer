@@ -182,6 +182,21 @@ button {
     background-color:#ffd451;
     height: 32vw;
     transition: 0.4s;
+    /* display: flex;
+    align-items: center;
+    justify-content: center  */
+    
+}
+#project-names {
+    /* position: absolute;
+    top: 36vw;
+    width:50%;
+    height: 32vw; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    list-style: inside;
 }
 
 .project-titles {
@@ -190,7 +205,11 @@ button {
     margin-right: 4.5vw;
     text-align: center;
     text-decoration: none;
+    /* list-style: inside; */
     margin-top: 3.5vw;
+    /* display: flex; */
+    /* align-items: center; */
+    /* justify-content: center  */
 }
 
 .project-titles a:hover, .project-titles li:hover, .project-titles li:focus {
@@ -715,13 +734,14 @@ button {
                 } */
 
                 @media only screen and (max-width: 900px) {
-                    /* .collation-of {
-                        display: none;
+                    .collation-of {
+                        font-size: 1.3vw;
                     }
 
                     .project-titles {
-                        font-size: 33px
-                    } */
+                        margin-right: 9vw;
+                        font-size:2.6vw;
+                    }
 
                     #CilviaTwo {
                         display: none;
