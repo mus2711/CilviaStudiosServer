@@ -3,17 +3,12 @@ import emaildata from "./emaildb.js";
 import emailclient from "./emailsclient.js";
 import insertcomments from "./commentdb.js";
 import commentclient from "./commentclient.js";
-const buggydb = "./db/buggy.sqlite";
-const cs19db = "./db/c19comments.sqlite";
-const sleepdb = "./db/sleep.sqlite";
-const stooldb = "./db/stool.sqlite";
-
-var buggyArrays = commentclient.init(buggydb);
-var stoolArrays = commentclient.init(stooldb);
-var sleepArrays = commentclient.init(sleepdb);
-var c19Arrays = commentclient.init(cs19db);
+var buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
+var stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
+var sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
+var c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 var emailArray = emailclient.init();
-const port = process.env.PORT || 8080;
+const port = 8080;
 const app = express();
 
 app.use("/", express.static("cilviastudios"));
@@ -39,64 +34,64 @@ app.post("/api", (request, response) => {
 
 app.get("/buggy", (request, response) => {
     response.json({comments: buggyArrays});
-    buggyArrays = commentclient.init(buggydb);
+    buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
 });
 
 app.post("/buggy", (request, response) => {
     console.log("I got a comment");
-    console.log(request.body);
-    insertcomments.init(buggydb, request.body.userName, request.body.userFeedback);
+    // console.log(request.body);
+    insertcomments.init("./db/buggycommentstest.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    buggyArrays = commentclient.init(buggydb);
+    buggyArrays = commentclient.init("./db/buggycommentstest.sqlite");
 });
 
 app.get("/stool", (request, response) => {
     response.json({comments: stoolArrays});
-    stoolArrays = commentclient.init(stooldb);
+    stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
 });
 
 app.post("/stool", (request, response) => {
     console.log("I got a comment");
-    console.log(request.body);
-    insertcomments.init(stooldb, request.body.userName, request.body.userFeedback);
+    // console.log(request.body);
+    insertcomments.init("./db/stoolcommentstest.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    stoolArrays = commentclient.init(stooldb);
+    stoolArrays = commentclient.init("./db/stoolcommentstest.sqlite");
 });
 
 app.get("/sleep", (request, response) => {
     response.json({comments: sleepArrays});
-    sleepArrays = commentclient.init(sleepdb);
+    sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
 });
 
 app.post("/sleep", (request, response) => {
     console.log("I got a comment");
-    console.log(request.body);
-    insertcomments.init(sleepdb,request.body.userName, request.body.userFeedback);
+    // console.log(request.body);
+    insertcomments.init("./db/sleepcommentstest.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    sleepArrays = commentclient.init(sleepdb);
+    sleepArrays = commentclient.init("./db/sleepcommentstest.sqlite");
 });
 
 app.get("/c19", (request, response) => {
     response.json({comments: c19Arrays});
-    c19Arrays = commentclient.init(cs19db);
+    c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 });
 
 app.post("/c19", (request, response) => {
     console.log("I got a comment");
-    console.log(request.body);
-    insertcomments.init(cs19db,request.body.userName, request.body.userFeedback);
+    // console.log(request.body);
+    insertcomments.init("./db/c19commentstest.sqlite",request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
     });
-    c19Arrays = commentclient.init(cs19db);
+    c19Arrays = commentclient.init("./db/c19commentstest.sqlite");
 });
