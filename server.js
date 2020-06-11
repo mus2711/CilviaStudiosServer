@@ -45,7 +45,7 @@ app.get("/buggy", (request, response) => {
 
 app.post("/buggy", (request, response) => {
     console.log("I got a comment");
-    // console.log(request.body);
+    console.log(request.body);
     insertcomments.init(buggydb, request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
@@ -61,7 +61,7 @@ app.get("/stool", (request, response) => {
 
 app.post("/stool", (request, response) => {
     console.log("I got a comment");
-    // console.log(request.body);
+    console.log(request.body);
     insertcomments.init(stooldb, request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
@@ -77,7 +77,7 @@ app.get("/sleep", (request, response) => {
 
 app.post("/sleep", (request, response) => {
     console.log("I got a comment");
-    // console.log(request.body);
+    console.log(request.body);
     insertcomments.init(sleepdb,request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
@@ -93,7 +93,7 @@ app.get("/c19", (request, response) => {
 
 app.post("/c19", (request, response) => {
     console.log("I got a comment");
-    // console.log(request.body);
+    console.log(request.body);
     insertcomments.init(cs19db,request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
