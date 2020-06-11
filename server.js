@@ -29,6 +29,7 @@ app.get("/api", (request, response) => {
 
 app.post("/api", (request, response) => {
     console.log("I got an email.");
+    console.log(request.body.subscriber);
     emaildata.init(request.body.subscriber);
     response.json({
         status: "subscribed",
