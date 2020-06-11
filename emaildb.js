@@ -1,17 +1,16 @@
 import sqlite3 from "sqlite3";
 const emaildata = Object.create(null);
-emaildata.init = function(email) {
+emaildata.init = function(email, url) {
 
-
-    let db = new sqlite3.Database("./db/subscribers.sqlite", sqlite3.OPEN_READWRITE, (err) => {
+    let db = new sqlite3.Database(url, sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
           return console.error(err.message);
         }
         console.log("Connected to the subscribers SQlite database.");
       });
   
-    let sql = `SELECT DISTINCT email name FROM subscribers ORDER BY name`;
-    let ins = `INSERT INTO subscribers(email) VALUES("${email}")`;
+    let sql = `SELECT DISTINCT email name FROM emails ORDER BY name`;
+    let ins = `INSERT INTO emails(email) VALUES("${email}")`;
   
     db.run(ins, [], function(err) {
         if (err) {
