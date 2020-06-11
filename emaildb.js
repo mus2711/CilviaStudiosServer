@@ -35,7 +35,7 @@ emaildata.init = function(email, url) {
         }
         console.log("Closed the database connection.");
       });
-      // console.log(emailarray);
+      console.log(emailarray);
 };
 
 export default Object.freeze(emaildata);

@@ -23,6 +23,8 @@ insertcomments.init = function(database, name, comment) {
           throw err;
         }
         rows.forEach((row) => {
+          console.log(row.name);
+          console.log(row.comment);
           namearray.push(row.name);
           commentarray.push(row.comment);
         });
