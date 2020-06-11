@@ -1,8 +1,8 @@
 import sqlite3 from "sqlite3";
 const emaildata = Object.create(null);
-emaildata.init = function(email, url) {
+emaildata.init = function(email) {
 
-    let db = new sqlite3.Database(url, sqlite3.OPEN_READWRITE, (err) => {
+    let db = new sqlite3.Database("./db/subscribers.sqlite", sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
           return console.error(err.message);
         }
