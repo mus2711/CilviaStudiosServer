@@ -25,7 +25,7 @@ emaildata.init = function(email) {
           throw err;
         }
         rows.forEach((row) => {
-          console.log(row.name);
+          // console.log(row.name);
           emailarray.push(row.name);
         });
     });
