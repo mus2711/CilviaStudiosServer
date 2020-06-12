@@ -1,10 +1,13 @@
 const access = Object.create(null);
-
+// This function allows the index.html to conform better to WCAG
+// standards, although not recognised by mozilla accessibility,
+// this allows tabbing to each interactuve element in the page and
+// use of enter button to interact with each element, ie. set off
+// side nav.
 access.init = function () {
     const el = function (id) {
         return document.getElementById(id);
     };
-    
     el("CilviaOne").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -14,7 +17,6 @@ access.init = function () {
             break;
         }
     });
-    
     el("tglist").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -24,7 +26,6 @@ access.init = function () {
             break;
         }
     });
-    
     el("mslist").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -34,7 +35,6 @@ access.init = function () {
             break;
         }
     });
-    
     el("cslist").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -62,7 +62,6 @@ access.init = function () {
             break;
         }
     });
-    
     el("mailelement").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -72,7 +71,6 @@ access.init = function () {
             break;
         }
     });
-    
     el("numberelement").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -82,7 +80,6 @@ access.init = function () {
             break;
         }
     });
-
     el("buttonbehance").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {
@@ -92,7 +89,6 @@ access.init = function () {
             break;
         }
     });
-
     el("lets-grab-coffee").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {

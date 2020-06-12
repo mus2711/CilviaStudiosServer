@@ -1,17 +1,17 @@
 import sqlite3 from "sqlite3";
 const emaildata = Object.create(null);
 emaildata.init = function(email) {
-
-    let db = new sqlite3.Database("./db/subscribers.sqlite", sqlite3.OPEN_READWRITE, (err) => {
+    // set up to read and write to database of emails
+    let db = new sqlite3.Database("./db/subscribers.sqlite",
+    sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
           return console.error(err.message);
         }
         console.log("Connected to the subscribers SQlite database.");
       });
-  
-    let sql = `SELECT DISTINCT email name FROM emails ORDER BY name`;
-    let ins = `INSERT INTO emails(email) VALUES("${email}")`;
-  
+    // formatting of commands to insert email into table
+    let sql = `SELECT DISTINCT email name FROM subscribers ORDER BY name`;
+    let ins = `INSERT INTO subscribers(email) VALUES("${email}")`;
     db.run(ins, [], function(err) {
         if (err) {
           return console.log(err.message);
@@ -30,6 +30,7 @@ emaildata.init = function(email) {
         });
     });
     db.close((err) => {
+      //all databases should be close, considered as good practice
         if (err) {
           return console.error(err.message);
         }
@@ -37,5 +38,4 @@ emaildata.init = function(email) {
       });
       console.log(emailarray);
 };
-
 export default Object.freeze(emaildata);

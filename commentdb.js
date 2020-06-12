@@ -1,5 +1,8 @@
 import sqlite3 from "sqlite3";
 const insertcomments = Object.create(null);
+// use of database input variable allows this script to handle
+// all the different comment databases without re writing
+// script for each comment database, path is simply just passed.
 insertcomments.init = function(database, name, comment) {
 
     let db = new sqlite3.Database(database, sqlite3.OPEN_READWRITE, (err) => {
@@ -23,8 +26,6 @@ insertcomments.init = function(database, name, comment) {
           throw err;
         }
         rows.forEach((row) => {
-          // console.log(row.name);
-          // console.log(row.comment);
           namearray.push(row.name);
           commentarray.push(row.comment);
         });

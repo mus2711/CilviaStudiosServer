@@ -1,6 +1,11 @@
 import sqlite3 from "sqlite3";
 const commentclient = Object.create(null);
 
+// comment client iterates through names and comments in the database table
+// this iteration passes names and comments into seperate arrays and passes them
+// into the client. Which receives this as a promise and itrerates through the
+// arrays and passing them into comment templates to generate a list of comments
+
 commentclient.init = function(database) {
     let db = new sqlite3.Database(database, sqlite3.OPEN_READWRITE, (err) => {
         if (err) {

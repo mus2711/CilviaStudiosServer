@@ -1,6 +1,10 @@
 const animation = Object.create(null);
 const el = (id) => document.getElementById(id);
-
+// intial animation works only on Mozzila for some reason
+// this uses the requestAnimationFrame to rerender the svg,
+// by iterating its scale and making it smaller. the container
+// and svg are then turned to 0 opacity and displayes as none,
+// just as the logo scales to 0, by the use of the 1500 timeout.
 animation.init = function () {
     const cilvialogo = el("cilviasvg");
     const background = el("loadingscreen");

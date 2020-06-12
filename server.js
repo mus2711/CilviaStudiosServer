@@ -3,11 +3,13 @@ import emaildata from "./emaildb.js";
 import emailclient from "./emailsclient.js";
 import insertcomments from "./commentdb.js";
 import commentclient from "./commentclient.js";
+// setting paths of databases with a variable, makes it easier to change
+//databses quickly.
 const buggydb = "./db/buggy.sqlite";
 const cs19db = "./db/c19comments.sqlite";
 const sleepdb = "./db/sleep.sqlite";
 const stooldb = "./db/stool.sqlite";
-
+// arrays that will be posted to clint, taken from databases
 var buggyArrays = commentclient.init(buggydb);
 var stoolArrays = commentclient.init(stooldb);
 var sleepArrays = commentclient.init(sleepdb);
@@ -15,6 +17,9 @@ var c19Arrays = commentclient.init(cs19db);
 var emailArray = emailclient.init();
 const port = process.env.PORT || 8080;
 const app = express();
+
+//several paths set here dealing with POST and get calls from client
+//individually.
 
 app.use("/", express.static("cilviastudios"));
 app.listen(port, function () {
@@ -24,12 +29,15 @@ app.use(express.json({limit: "20mb"}));
 
 app.get("/api", (request, response) => {
     response.json({emails: emailArray});
+    //refresh array, this was done for emails and comments to ensure they
+    //remained on website without need to refresh server.
     emailArray = emailclient.init();
 });
 
 app.post("/api", (request, response) => {
     console.log("I got an email.");
     console.log(request.body.subscriber);
+    //insert email into database
     emaildata.init(request.body.subscriber);
     response.json({
         status: "subscribed",
@@ -46,7 +54,9 @@ app.get("/buggy", (request, response) => {
 app.post("/buggy", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
-    insertcomments.init(buggydb, request.body.userName, request.body.userFeedback);
+    //insert name and comment from client into database
+    insertcomments.init(
+        buggydb, request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
@@ -62,7 +72,8 @@ app.get("/stool", (request, response) => {
 app.post("/stool", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
-    insertcomments.init(stooldb, request.body.userName, request.body.userFeedback);
+    insertcomments.init(
+        stooldb, request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
@@ -78,7 +89,8 @@ app.get("/sleep", (request, response) => {
 app.post("/sleep", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
-    insertcomments.init(sleepdb,request.body.userName, request.body.userFeedback);
+    insertcomments.init(
+        sleepdb,request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback
@@ -94,7 +106,8 @@ app.get("/c19", (request, response) => {
 app.post("/c19", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
-    insertcomments.init(cs19db,request.body.userName, request.body.userFeedback);
+    insertcomments.init(
+        cs19db,request.body.userName, request.body.userFeedback);
     response.json({
         name: request.body.userName,
         comment: request.body.userFeedback

@@ -1,9 +1,11 @@
 import sqlite3 from "sqlite3";
 const emailclient = Object.create(null);
+// email client handles the passed array to the client by
+// calling on database and iterating through all emails in column.
 emailclient.init = function() {
 
-
-    let db = new sqlite3.Database("./db/subscribers.sqlite", sqlite3.OPEN_READWRITE, (err) => {
+    let db = new sqlite3.Database("./db/subscribers.sqlite",
+    sqlite3.OPEN_READWRITE, (err) => {
         if (err) {
           return console.error(err.message);
         }
