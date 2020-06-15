@@ -54,6 +54,8 @@ app.get("/buggy", (request, response) => {
 app.post("/buggy", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
+    request.body.userName = request.body.userName.replace("'", "`");
+    request.body.userFeedback = request.body.userFeedback.replace("'","`");
     //insert name and comment from client into database
     insertcomments.init(
         buggydb, request.body.userName, request.body.userFeedback);
@@ -72,6 +74,8 @@ app.get("/stool", (request, response) => {
 app.post("/stool", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
+    request.body.userName = request.body.userName.replace("'", "`");
+    request.body.userFeedback = request.body.userFeedback.replace("'","`");
     insertcomments.init(
         stooldb, request.body.userName, request.body.userFeedback);
     response.json({
@@ -89,6 +93,8 @@ app.get("/sleep", (request, response) => {
 app.post("/sleep", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
+    request.body.userName = request.body.userName.replace("'", "`");
+    request.body.userFeedback = request.body.userFeedback.replace("'","`");
     insertcomments.init(
         sleepdb,request.body.userName, request.body.userFeedback);
     response.json({
@@ -106,6 +112,8 @@ app.get("/c19", (request, response) => {
 app.post("/c19", (request, response) => {
     console.log("I got a comment");
     console.log(request.body);
+    request.body.userName = request.body.userName.replace("'", "`");
+    request.body.userFeedback = request.body.userFeedback.replace("'","`");
     insertcomments.init(
         cs19db,request.body.userName, request.body.userFeedback);
     response.json({
