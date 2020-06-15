@@ -36,9 +36,9 @@ html, body {
     overflow-y: scroll;
 }
     
-
+/* #6759f3 old blue colour*/
 header {
-    background-color:#6759f3;
+    background-color:#7669F4;
     top: 0px;
     height: 6vw;
     left: 0;
@@ -142,7 +142,7 @@ button {
 #top-message {
     font-family: "TiffanyStdDemi";
     font-size: 4vw;
-    background-color:#6759f3;
+    background-color:#7669F4;
     position: absolute;
     top: 0px;
 }
@@ -232,7 +232,7 @@ button {
     width: 50%;
     right: 0;
     height: 27vw;
-    background-color:#6759f3;
+    background-color:#7669F4;
     max-width: 50%;
     left: 50%;
 }
@@ -258,7 +258,7 @@ button {
 }
 .graphic-title {
     position: absolute;
-    top: 68vw;
+    top: 68.5vw;
     left: 50%;
     margin-left: 3.2vw;
 
@@ -283,7 +283,7 @@ button {
 
 .magazine {
     position: absolute;
-    background-color:#6759f3;
+    background-color:#7669F4;
     width: 50%;
     left: 0;
     top: 68vw;
@@ -626,7 +626,7 @@ button {
     z-index: 1; /* Stay on top */
     top: 0;
     left: 0;
-    background-color:#6759f3; /* Black*/
+    background-color:#7669F4; /* Black*/
     overflow-x: hidden; /* Disable horizontal scroll */
     overflow-y: hidden;
     transition: 2s;
@@ -705,7 +705,7 @@ button {
                                 display: none
                             }
                             #subscribe-button, #email-here {
-                                margin-top: 140 vw;    
+                                margin-top: 140vw;    
                             }
                         }
                     }
