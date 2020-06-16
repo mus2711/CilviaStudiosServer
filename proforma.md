@@ -67,7 +67,7 @@ Testing was done on the email validity passing function (newemail.js), this was 
 
 *Outline your use of software development best practices*
 
-Accessibility has been considered for index.html, by implementing code in mainaccess.js for the index.html file to allow users to tab through the interactive elements and access them with an enter, thus trying my best to conform to standards, although this accessibility is not recognised in the mozilla accessibility test. Colours have been altered for appropriate viewing and interactive elements have been labelled with titles and labels to pictures in index.html.
+Accessibility has been considered for index.html, by implementing code in mainaccess.js for the index.html file to allow users to tab through the interactive elements and access them with an enter, thus trying my best to conform to standards, although this accessibility is not recognised in the mozilla accessibility test, this has been considered and its functionally has been implemented. Colours have been altered for appropriate viewing and interactive elements have been labelled with titles and labels to pictures in index.html.
 
  Javascript files have been checked for js lint errors for consistent writing, the only jslint errors that come up are related to the use of (=>) functions, async functions and areas where 80+ character lines were unavoidable.
 
