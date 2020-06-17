@@ -46,8 +46,8 @@ feedbackUI.init = async function (serverid) {
     // in the database.
     var counterCommentNumber = 0;
     el("commentbutton").onclick = async function () {
-        const userName = name.value;
-        const userFeedback = feedback.value;
+        const userName = name.value.trim();
+        const userFeedback = feedback.value.trim();
         if (name.value !== "") {
             if(userFeedback !== "") {
                 console.log("clicked");

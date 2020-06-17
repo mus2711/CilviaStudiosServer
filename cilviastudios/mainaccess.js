@@ -80,6 +80,24 @@ access.init = function () {
             break;
         }
     });
+    el("email-here").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            document.getElementById("subscribe-button").click();
+            break;
+        }
+    });
+    el("subscribe-button").addEventListener("keyup", function (e) {
+        var key = e.which || e.keyCode;
+        switch (key) {
+        case 13:
+            console.log("enter pressed");
+            document.getElementById("subscribe-button").click();
+            break;
+        }
+    });
     el("buttonbehance").addEventListener("keyup", function (e) {
         var key = e.which || e.keyCode;
         switch (key) {

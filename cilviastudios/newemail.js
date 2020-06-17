@@ -39,7 +39,7 @@ email.init = function(i) {
         let testObj = await theEmails();
         let emailArray = Object.values(testObj)[0];
         // console.log(emailArray);
-        var subscriber = textbox.value;
+        var subscriber = textbox.value.trim();
         textbox.style.color = "inherit";
         // checks upon email validity, only passes to server if passes the
         // regex.
