@@ -18,7 +18,7 @@
     "bootstrap": "^3.4.1",
     "commonjs-require-definition": "^0.6.3",
     "dotenv": "^8.2.0",
-    "express": "^4.17.1",
+    "express": "^4.18.2",
     "fast-check": "^1.24.2",
     "mocha": "^7.2.0",
     "pg": "^8.2.1",
